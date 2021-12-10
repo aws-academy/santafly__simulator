@@ -1,11 +1,11 @@
-const path = require("path");
-const { mqtt, iot } = require("aws-iot-device-sdk-v2");
-const fs = require("fs/promises");
-const { createWriteStream } = require("fs");
-const https = require("https");
-const certData = require("../cert/cert-data.json");
+const path = require('path');
+const { mqtt, iot } = require('aws-iot-device-sdk-v2');
+const fs = require('fs/promises');
+const { createWriteStream } = require('fs');
+const https = require('https');
+const certData = require('../cert/cert-data.json');
 
-const caPath = path.join(__dirname, "..", "cert", "AmazonRootCA1.pem");
+const caPath = path.join(__dirname, '..', 'cert', 'AmazonRootCA1.pem');
 
 const getAmazonRootCA = async () => {
   let ca;
@@ -15,7 +15,7 @@ const getAmazonRootCA = async () => {
   } catch (error) {
     return new Promise((resolve) => {
       https.get(
-        "https://www.amazontrust.com/repository/AmazonRootCA1.pem",
+        'https://www.amazontrust.com/repository/AmazonRootCA1.pem',
         (response) => {
           const fileStream = createWriteStream(caPath);
           response.pipe(fileStream);
@@ -23,7 +23,7 @@ const getAmazonRootCA = async () => {
             fileStream.close();
             ca = await fs.readFile(caPath);
             resolve(ca.toString());
-          })
+          });
         }
       );
     });
@@ -43,7 +43,7 @@ const createConnection = async (endpoint) => {
 
   config_builder.with_clean_session(false);
   config_builder.with_client_id(
-    "santa-" + Math.floor(Math.random() * 100000000)
+    'santa-' + Math.floor(Math.random() * 100000000)
   );
 
   config_builder.with_endpoint(endpoint);

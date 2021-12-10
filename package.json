@@ -7,11 +7,14 @@
   "scripts": {
     "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
     "start": "node src/index.js",
-    "create-keys": "node lib/create-keys-and-certificate.js"
+    "create-keys": "node lib/create-keys-and-certificate.js",
+    "style": "prettier -w ./src ./bin ./lib"
   },
   "devDependencies": {
     "aws-cdk": "2.0.0",
-    "eslint": "^8.4.0"
+    "eslint": "^8.4.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "2.5.1"
   },
   "dependencies": {
     "@aws-sdk/client-iot": "^3.44.0",

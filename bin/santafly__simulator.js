@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-require('dotenv').config()
+require('dotenv').config();
 
-const { Tags } = require("aws-cdk-lib");
-const cdk = require("aws-cdk-lib");
-const { SantaflySimulatorStack } = require("../lib/santafly__simulator-stack");
+const { Tags } = require('aws-cdk-lib');
+const cdk = require('aws-cdk-lib');
+const { SantaflySimulatorStack } = require('../lib/santafly__simulator-stack');
 
 process.env.SSTACK_NAME = process.env.SSTACK_NAME || 'santafly-pontinen-stack';
 

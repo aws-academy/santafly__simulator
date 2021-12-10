@@ -1,4 +1,4 @@
-const Boid = require("./Boid");
+const Boid = require('./Boid');
 
 const boids = [];
 let updateIntervalId;
