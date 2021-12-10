@@ -7,7 +7,7 @@
   "scripts": {
     "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
     "start": "node src/index.js",
-    "create-keys": "node lib/create-keys-and-certificate.js",
+    "create-keys": "node bin/create-keys-and-certificate.js",
     "style": "prettier -w ./src ./bin ./lib"
   },
   "devDependencies": {
